@@ -3,11 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Welcome to the Library App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 50%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #ffffff;
+            padding-top: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        header h1 {
+            text-align: center;
+            color: #333333;
+        }
+
+        #auth-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .toggle-form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .toggle-form a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>blah </h1>
-    <h2> blah </h2>
+
+<div class="container">
+    <header>
+        <h1>Welcome to the Library App</h1>
+    </header>
+
+    <div id="auth-container">
+        <form id="login-form" action="/login" method="post">
+            <label for="login-Gebruiksnaam">Gebruiksnaam:</label>
+            <input type="text" id="login-Gebruiksnaam" name="Gebruiksnaam" required>
+
+            <label for="login-passwoord">Passwoord:</label>
+            <input type="passwoord" id="login-passwoord" name="passwoord" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <form id="signup-form" action="/signup" method="post" style="display: none;">
+            <label for="signup-Gebruiksnaam">Gebruiksnaam:</label>
+            <input type="text" id="signup-Gebruiksnaam" name="Gebruiksnaam" required>
+
+            <label for="signup-voornaam">voornaam:</label>
+            <input type="text" id="signup-voornaam" name="voornaam" required>
+            
+            <label for="signup-achternaam">achternaam</label>
+            <input type="text" id="signup-achternaam" name="achternaam" required>
+            
+            <label for="signup-inschrijvingsjaar">inschrijvingsjaar:</label>
+            <input type="text" id="signup-inschrijvingsjaar" name="inschrijvingsjaar" required>
+            
+            <label for="signup-studierichting">studierichting</label>
+            <input type="text" id="signup-studierichting" name="studierichting" required>
+
+            <label for="signup-mobielnummer">mobielnummer:</label>
+            <input type="text" id="signup-mobielnummer" name="mobielnummer" required>
+            
+            <label for="signup-Email">Email:</label>
+            <input type="text" id="signup-Email" name="Email" required>
+
+            <label for="signup-passwoord">Passwoord:</label>
+            <input type="password" id="signup-passwoord" name="passwoord" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="toggle-form">
+         <a href="#" onclick="toggleForms()">Don't have an account? Sign Up</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleForms() {
+        var loginForm = document.getElementById("login-form");
+        var signupForm = document.getElementById("signup-form");
+
+        if (loginForm.style.display === "block") {
+            loginForm.style.display = "none";
+            signupForm.style.display = "block";
+        } else {
+            loginForm.style.display = "block";
+            signupForm.style.display = "none";
+        }
+    }
+</script>
+
 </body>
 </html>
